@@ -1,0 +1,38 @@
+<div class="meeting-rooms-list card-container {{viewStyle}}">
+  <div class="item {{tileSize}}">
+    <div class="card add">
+      <div class="card-content">
+        <div class="add-btn">
+          <a href="javascript:void(0)" class="add-new-room">
+            <i class="jif-plus-circle-o jif-light-grey jif-70"></i>
+          </a>
+        </div>
+        <div>
+          <a class="btn btn-white btn-block add-new-room" data-toggle="modal" href="javascript:void(0)" data-i18n="add_single_room">
+            {{addRoomLabel}}
+          </a>
+        </div>
+        <div class="text-center font-sm">OR</div>
+        <div>
+          <form class="upload-csv" style="position: relative;">
+            <div class="upload-file-btn">
+              <input class="upload-room-input hide" type="file" accept=".csv" id="upload_csv_rooms" />
+              <label id="submit" class="btn btn-white btn-block" for="upload_csv_rooms" data-i18n="upload_rooms">
+                {{uploadRoomLabel}}
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-footer-content">
+          <div class="text-center">
+            <a href="{{prefix}}/room/csv_template" class="download-format-link font-xs" data-i18n="download_room_csv_format">
+              {{t "download_room_csv_format"}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

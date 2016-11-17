@@ -1,0 +1,9 @@
+<div class="col-sm-12"><h5>{{t name}}</h5></div>
+{{#each items}}
+<div class="col-sm-5">
+    <div class="checkbox">
+        <input type="checkbox" id="{{uuid}}" value="{{name}}" data-type="{{../type}}" class="filter-cb">
+        <label for="{{uuid}}">{{name}}</label>
+    </div>
+</div>
+{{/each}}

@@ -1,0 +1,12 @@
+{{#each filters}}
+	{{#each this}}
+	<li class="filter-item">
+		<div class="selected-item">
+			<a class="remove" href="javascript:void(0)" data-type="{{@../key}}" data-value="{{this}}" >
+				<i class="jif-close close-applied-filter jif-dark1-grey"></i>
+			</a>
+			<span class="remove_filter_icon">{{t @../key}} : {{t this}}</span>
+		</div>
+	</li>
+	{{/each}}
+{{/each}}

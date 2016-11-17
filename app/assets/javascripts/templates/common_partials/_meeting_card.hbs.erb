@@ -1,0 +1,161 @@
+<div class="card meeting-card {{status}}" data-uuid='{{uuid}}' id="{{uuid}}">
+      <div class="card-header">
+        <div class="card-header-content">
+          <div class="card-select">
+            {{#if edit}}
+              <input type="checkbox" name="meetingCard" {{checked}} data-uuid='{{uuid}}' id="meetingCard_{{uuid}}" class="selectable">
+            {{else}}
+              <input type="checkbox" name="meetingCard" class="no-hover" disabled>
+            {{/if}}
+            <label for="meetingCard_{{uuid}}">
+              <div>
+              {{#if meetingType}}
+                 {{meetingType}}
+              {{else}}
+                 M
+              {{/if}}
+              </div>
+            </label>
+          </div>
+          <div class="card-click meetingRevealCls" data-uuid='{{uuid}}'>
+            {{#if briefing_meeting_title}}
+              <div class="font-lg meeting-title" title="{{briefing_meeting_title}}">{{briefing_meeting_title}}</div>
+            {{else}}
+              <div class="font-lg meeting-title" title="{{meeting_with}}">{{meeting_with}}</div> 
+            {{/if}}
+            <div class="font-lg">{{t 'ID'}} #{{id}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content meetingRevealCls" data-uuid='{{uuid}}'>
+        <div class="card-detail-content">
+          <div>
+            <div class="card-detail icon-sep">
+              <div class="text-content">
+                {{#if multipleDayDisplayFormat}}
+                  <span class="font-sm">{{startDateTime}}</span>
+                  <br>
+                  <span class="font-sm">{{endDateTime}}</span>
+                  <br>
+                {{else}}
+                  <span class="font-semi-bold">{{startTime}} - {{endTime}}</span>
+                  <br>
+                  <span class="font-sm">{{meetingDate}}</span>
+                {{/if}}
+              </div>
+              <div class="icon-content hide jif-blue text-center icon-box">
+                <i class="jif-checkin"></i>
+                <div class="font-8">{{t 'checkin'}}</div>
+              </div>
+            </div>
+            <div class="card-detail icon-sep">
+              <div class="text-content location-text two-line-ellipsis" title="{{location}}">
+                {{location}}
+              </div>
+              <div class="icon-content hide jif-blue text-center icon-box">
+                <i class="jif-location"></i>
+                <div class="font-8" titl>{{t "location"}}</div>
+              </div>
+              {{#if show_survey}}
+                <div class="icon-content jif-blue point-cursor js-survey-icon" data-toggle="modal">
+                  <i class="jif-survey"></i>
+                  <div class="font-8">Survey</div>
+                </div>
+              {{/if}}
+            </div>
+          </div>
+          <div class="card-detail count">
+            <div class="item-section attedee-counts">
+              <div class="section-count accepted">
+                <div class="count">{{acceptedCount}}</div>
+                <div class="status">{{t "accepted"}}</div>
+              </div>
+              <div class="section-count declined">
+                <div class="count">{{declinedCount}}</div>
+                <div class="status">{{t "declined"}}</div>
+              </div>
+              <div class="section-count pending">
+                <div class="count">{{pendingCount}}</div>
+                <div class="status">{{t "pending"}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+         <div class="card-footer-content">
+            {{#if showUserActions}}
+
+              <div class="meeting-approved {{approved}}">
+                <span class="font-blue">{{t "approved"}}</span>
+              </div>
+
+              <div class="meeting-approve {{Approve}}" data-url="{{actions_urls.approve_meeting_url}}">
+                <a href="javascript:void(0)" class="icon-box jif-blue">
+                  <i class="jif-check"></i>
+                  <div class="font-8">{{t 'approve'}}</div>
+                </a>
+              </div>
+
+              <div class="meeting-approve-all {{approve_all}}" data-url="{{action_urls.approve_all_url}}">
+                <a href="javascript:void(0)" class="icon-box jif-blue">
+                  <i class="jif-check"></i>
+                  <div class="font-8">{{t 'approve_all'}}</div>
+                </a>
+              </div>
+
+              <div class="meeting-cancelled {{cancelled}}">
+                <span class="font-red">{{t "cancelled"}}</span>
+              </div>
+
+              <div class="meeting-cancel {{ Cancel }}" data-url="{{actions_urls.cancel_meeting_url}}">
+                <a href="javascript:void(0)" class="icon-box jif-red">
+                  <i class="jif-trash"></i>
+                  <div class="font-8">{{t 'cancel'}}</div>
+                </a>
+              </div>
+
+              <div class="meeting-cancel-all {{ cancel_all }}" data-url="{{action_urls.cancel_all_url}}">
+                <a href="javascript:void(0)" class="icon-box jif-red">
+                  <i class="jif-trash"></i>
+                  <div class="font-8">{{t 'cancel_all'}}</div>
+                </a>
+              </div>
+
+              <div class="meeting-accepted {{accepted}}">
+                <span class="font-blue">{{t "accepted"}}</span>
+              </div>
+
+              <div class="meeting-accept {{Accept}}" data-url="{{actions_urls.accept_meeting_url}}">
+                <a href="javascript:void(0)" class="icon-box jif-blue">
+                  <i class="jif-check"></i>
+                  <div class="font-8">{{t "accept"}}</div>
+                </a>
+              </div>
+
+              <div class="meeting-declined {{declined}}">
+                <span class="font-red">{{t 'declined'}}</span>
+              </div>
+
+
+              <div class="meeting-decline {{Decline}}" data-url="{{actions_urls.decline_meeting_url}}">
+                <a href="javascript:void(0)" class="icon-box jif-red">
+                  <i class="jif-close"></i>
+                  <div class="font-8">{{t "decline"}}</div>
+                </a>
+              </div>
+
+              <div class="meeting-summary hide">
+                <a href="javascript:void(0)" class="icon-box jif-blue">
+                  <i class="jif-summary"></i>
+                  <div class="font-8">{{t "summary"}}</div>
+                </a>
+              </div>
+            {{/if}}
+         </div>
+      </div>
+</div>
+
+
+
+

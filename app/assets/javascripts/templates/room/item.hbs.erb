@@ -1,0 +1,66 @@
+{{#each roomData.items}}
+<div class="room-item-list item {{../roomData.toggleState.tileSize}}" data-uuid={{uuid}}>
+   <div class="card">
+      <div class="card-header">
+         <div class="card-header-content">
+            <div class="card-select">
+               <input type="checkbox" id="room-{{uuid}}" {{checked}} name="selectableCard" data-uuid="{{uuid}}">
+               <label for="room-{{uuid}}">
+                  <div>M</div>
+               </label>
+            </div>
+            <div class="card-click">
+               <div class="font-lg" title="{{name}}">{{name}}</div>
+            </div>
+         </div>
+      </div>
+      <div class="card-content">
+         <div class="card-detail-content">
+
+            {{#unless ../roomData.isStaffSchedulingEvent}}
+              <div class="card-detail">
+                <label class="font-xs">{{t "type"}}</label>
+                <span class="font-lg">{{meetingTypes}}</span>
+              </div>
+              <div class="card-detail room-capacity">
+                <label class="font-xs">{{t "capacity"}}</label>
+                <span class="font-lg">{{capacity}}</span>
+              </div>
+            {{/unless}}
+            {{#if ../roomData.isStaffSchedulingEvent }}
+              <div class="card-detail">
+                <label class="font-xs">{{"tagCustomLabel"}}</label>
+                <span class="font-lg">{{tagDisplays}}</span>
+              </div>
+            {{/if}}
+            <div class="card-detail location">
+               {{#if ../roomData.isStaffSchedulingEvent }}
+                  <label class="font-xs">{{t "_LOCATION_DESCRIPTION"}}</label>
+               {{else}}
+                  <label class="font-xs">{{t "_LOCATION"}}</label>
+               {{/if}}
+               {{#if location}}
+                  <span class="font-lg" title="{{location}}">{{location}}</span>
+               {{else}}
+                  <span class="font-lg">&nbsp;&nbsp; - </span>
+               {{/if}}
+            </div>
+         </div>
+      </div>
+      <div class="card-footer">
+         <div class="card-footer-content">
+            <div class="font-xs">{{tr this key="last_updated" time=last_updated}}</div>
+         </div>
+      </div>
+      {{#unless active}}
+      <div class="card-overlay activate" data-uuid="{{uuid}}">
+         <div class="card-overlay-content">
+            <div class="card-overlay-action dark-bg">
+               <a href="javascript:void(0)" class="btn btn-blue btn-block activate-room">{{t "activate"}}</a>
+            </div>
+         </div>
+      </div>
+      {{/unless}}
+   </div>
+</div>
+{{/each}}

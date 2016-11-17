@@ -1,0 +1,89 @@
+{
+  "name": "bluesky-portal",
+  "version": "0.0.0",
+  "dependencies": {
+    "handlebars": "^2.0.0",
+    "moment": "^2.8.4",
+    "moment-timezone": "^0.4.0",
+    "pluralize": "^1.2.0"
+  },
+  "devDependencies": {
+    "Select2": "git://github.com/select2/select2",
+    "browser-sync": "^2.2.4",
+    "browserify": "^9.0.3",
+    "browserify-shim": "^3.8.0",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "~1.0.1",
+    "gulp-bower": "0.0.6",
+    "gulp-browserify": "^0.5.0",
+    "gulp-cache": "^0.2.4",
+    "gulp-compile-handlebars": "^0.4.4",
+    "gulp-concat": "^2.4.2",
+    "gulp-filter": "^4.0.0",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-handlebars-render": "0.0.1",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.0.0",
+    "gulp-jest": "~0.2.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^0.8.1",
+    "gulp-react": "~1.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "~0.7.1",
+    "gulp-shell": "^0.4.0",
+    "gulp-size": "~1.1.0",
+    "gulp-sourcemaps": "2.0.0-alpha",
+    "gulp-uglify": "^1.1.0",
+    "gulp-useref": "~0.4.4",
+    "gulp-util": "^3.0.4",
+    "gulp-webserver": "^0.8.3",
+    "handlebars": "^2.0.0",
+    "i18next-client": "^1.9.0",
+    "jasmine-core": "^2.3.4",
+    "jest": "~0.1.37",
+    "jquery": "^2.1.4",
+    "jquery.mousewheel": "^3.1.9",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "karma": "^0.13.0",
+    "karma-browserify": "^4.2.1",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-requirejs": "^0.2.2",
+    "keymirror": "^0.1.0",
+    "lodash": "^3.8.0",
+    "react": "0.12.2",
+    "react-infinite-scroll": "^0.1.5",
+    "react-router": "^0.11.6",
+    "reactify": ">0.15.0",
+    "reflux": "^0.2.7",
+    "requirejs": "^2.1.19",
+    "rest": "^1.2.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "vinyl-transform": "^1.0.0",
+    "yargs": "^3.5.4",
+    "binarysearch": "1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  },
+  "browser": {
+    "jquery": "./app/bower_components/jquery/dist/jquery.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  }
+}
